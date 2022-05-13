@@ -1,3 +1,5 @@
 from django.contrib import admin
 
-# Register your models here.
+from apps.estado.models import Estado
+
+admin.site.register(Estado)

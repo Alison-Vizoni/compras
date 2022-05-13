@@ -6,6 +6,6 @@ from apps.endereco.serializers import EnderecoSerializers
 
 
 class EnderecoViewSet(ModelViewSet):
-    query = Endereco.objects.all()
+    queryset = Endereco.objects.all()
     serializer_class = EnderecoSerializers
     http_method_names = ['get', 'post', 'put', 'delete']

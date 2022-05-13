@@ -6,6 +6,6 @@ from apps.cliente.serializers import ClienteSerializers
 
 
 class ClienteViewSet(ModelViewSet):
-    query = Cliente.objects.all()
+    queryset = Cliente.objects.all()
     serializer_class = ClienteSerializers
     http_method_names = ['get', 'post', 'put', 'delete']

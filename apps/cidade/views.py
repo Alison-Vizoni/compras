@@ -6,6 +6,6 @@ from apps.cidade.serializers import CidadeSerializers
 
 
 class CidadeViewSet(ModelViewSet):
-    query = Cidade.objects.all()
+    queryset = Cidade.objects.all()
     serializer_class = CidadeSerializers
     http_method_names = ['get', 'post', 'put', 'delete']

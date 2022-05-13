@@ -6,6 +6,6 @@ from apps.categoria.serializers import CategoriaSerializers
 
 
 class CategoriaViewSet(ModelViewSet):
-    query = Categoria.objects.all()
+    queryset = Categoria.objects.all()
     serializer_class = CategoriaSerializers
     http_method_names = ['get', 'post', 'put', 'delete']

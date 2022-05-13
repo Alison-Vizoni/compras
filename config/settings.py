@@ -27,6 +27,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+SWAGGER_SETTINGS = {
+    'VALIDATOR_URL': 'http://localhost:8000'
+}
+
 
 # Application definition
 
