@@ -22,19 +22,16 @@ from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 
 from apps.categoria.views import CategoriaViewSet
-from apps.cidade.views import CidadeViewSet
 from apps.cliente.views import ClienteViewSet
 from apps.endereco.views import EnderecoViewSet
-from apps.estado.views import EstadoViewSet
 from apps.pedido.views import PedidoViewSet
 from apps.produto.views import ProdutoViewSet
+from apps.users.views import UserAuthView
 
 router = routers.SimpleRouter()
 router.register("categoria", CategoriaViewSet)
-router.register("cidade", CidadeViewSet)
 router.register("cliente", ClienteViewSet)
 router.register("endereco", EnderecoViewSet)
-router.register("estado", EstadoViewSet)
 router.register("pedido", PedidoViewSet)
 router.register("produto", ProdutoViewSet)
 
@@ -55,4 +52,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
     path('api/docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    path('api/token/', UserAuthView.as_view()),
 ]

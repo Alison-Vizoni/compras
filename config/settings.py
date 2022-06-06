@@ -41,17 +41,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework.authtoken',
     'rest_framework',
     'drf_yasg',
 
     # APPS
     'apps.categoria',
-    'apps.cidade',
     'apps.cliente',
     'apps.endereco',
-    'apps.estado',
     'apps.pedido',
     'apps.produto',
+    'apps.users',
 ]
 
 MIDDLEWARE = [
@@ -84,6 +84,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
+AUTH_USER_MODEL = "users.UserModel"
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ]
+}
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
